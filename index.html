@@ -64,6 +64,23 @@
         font-size: 0.82rem;
       }
 
+      .site-banner {
+        background: #171b19;
+        color: #f4f2ec;
+        padding: 22px 6vw 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .site-banner h2 {
+        margin: 0;
+        font:
+          800 clamp(2rem, 4vw, 5rem)/0.9 "Trebuchet MS",
+          "Gill Sans",
+          sans-serif;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+
       .hero {
         min-height: 570px;
         height: min(72vh, 760px);
@@ -257,15 +274,21 @@
     </style>
   </head>
   <body>
-    <header class="topbar">
-      <a class="logo" href="#home" aria-label="Forme home">FORME</a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#collection">Shop</a>
-        <a href="#story">Our story</a>
-      </nav>
-      <button class="bag" type="button" aria-label="Shopping bag">
-        Bag (<span id="bag-count">0</span>)
-      </button>
+    <header>
+      <div class="topbar">
+        <a class="logo" href="#home" aria-label="Forme home">FORME</a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#collection">Shop</a>
+          <a href="#story">Our story</a>
+        </nav>
+        <button class="bag" type="button" aria-label="Shopping bag">
+          Bag (<span id="bag-count">0</span>)
+        </button>
+      </div>
+
+      <div class="site-banner">
+        <h2>Version 2</h2>
+      </div>
     </header>
 
     <main id="home">
