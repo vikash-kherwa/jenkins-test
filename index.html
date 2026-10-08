@@ -49,6 +49,21 @@
         align-items: center;
         gap: 12px;
       }
+      .brand-symbol {
+        width: 32px;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--ink);
+        color: var(--accent);
+        font:
+          700 1rem Georgia,
+          serif;
+      }
+      .brand-symbol--small {
+        width: 24px;
+        font-size: 0.8rem;
+      }
       .logo {
         font-size: 1.35rem;
         font-weight: 800;
@@ -73,10 +88,18 @@
         color: var(--accent);
       }
       .bag {
+        display: flex;
+        align-items: center;
+        gap: 8px;
         border: 0;
         background: none;
         cursor: pointer;
         font-size: 0.82rem;
+      }
+      .bag-icon {
+        width: 19px;
+        height: 19px;
+        flex: 0 0 auto;
       }
       .bag:hover {
         color: var(--accent);
@@ -126,6 +149,51 @@
         margin: 0 0 28px;
         color: #f1eee7;
         line-height: 1.6;
+      }
+      .brand-values {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 22px 6vw;
+        border-bottom: 1px solid var(--line);
+        background: #dfe4dc;
+      }
+      .brand-value {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 42px;
+      }
+      .brand-value + .brand-value {
+        padding-left: 24px;
+        border-left: 1px solid #bfc5bb;
+      }
+      .value-mark {
+        width: 32px;
+        aspect-ratio: 1;
+        display: grid;
+        flex: 0 0 auto;
+        place-items: center;
+        border: 1px solid #747c70;
+        border-radius: 50%;
+        color: #465044;
+        font:
+          italic 1rem Georgia,
+          serif;
+      }
+      .brand-value-text {
+        display: grid;
+        gap: 4px;
+      }
+      .brand-value strong {
+        font:
+          500 1.1rem Georgia,
+          serif;
+      }
+      .brand-value small {
+        color: #626a60;
+        font-size: 0.62rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
       .button {
         display: inline-block;
@@ -278,8 +346,23 @@
         gap: 16px;
       }
       .cart-header {
+        align-items: center;
         padding-bottom: 20px;
         border-bottom: 1px solid var(--line);
+      }
+      .cart-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .cart-brand-copy {
+        display: grid;
+        gap: 4px;
+      }
+      .cart-brand-name {
+        font-size: 0.63rem;
+        font-weight: 800;
+        letter-spacing: 0.13em;
       }
       .cart-header h2 {
         margin: 0;
@@ -393,6 +476,16 @@
         color: var(--muted);
         font-size: 0.76rem;
       }
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        color: var(--ink);
+      }
+      .footer-brand-name {
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
 
       @media (max-width: 650px) {
         .topbar {
@@ -402,6 +495,16 @@
         .nav {
           gap: 14px;
           font-size: 0.74rem;
+        }
+        .brand-values {
+          grid-template-columns: 1fr;
+          gap: 14px;
+          padding: 18px 6vw;
+        }
+        .brand-value + .brand-value {
+          padding: 14px 0 0;
+          border-top: 1px solid #bfc5bb;
+          border-left: 0;
         }
         .catalog-tools {
           flex-wrap: wrap;
@@ -466,14 +569,29 @@
     <header>
       <div class="topbar">
         <div class="brand">
+          <span class="brand-symbol" aria-hidden="true">F</span>
           <a class="logo" href="#home" aria-label="Forme home">FORME</a>
-          <span class="site-version">Version 6</span>
+          <span class="site-version">Version 8</span>
         </div>
         <nav class="nav" aria-label="Main navigation">
           <a href="#collection">Shop</a>
           <a href="#story">Our story</a>
         </nav>
         <button class="bag" type="button" aria-label="Shopping bag">
+          <svg
+            class="bag-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <path d="M3 6h18" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
           Bag (<span id="bag-count">0</span>)
         </button>
       </div>
@@ -489,6 +607,30 @@
             and again.
           </p>
           <a class="button" href="#collection">Explore the collection</a>
+        </div>
+      </section>
+
+      <section class="brand-values" aria-label="FORME collection values">
+        <div class="brand-value">
+          <span class="value-mark" aria-hidden="true">01</span>
+          <span class="brand-value-text">
+            <strong>Easy layers</strong>
+            <small>For everyday plans</small>
+          </span>
+        </div>
+        <div class="brand-value">
+          <span class="value-mark" aria-hidden="true">02</span>
+          <span class="brand-value-text">
+            <strong>Good in rotation</strong>
+            <small>Made to wear again</small>
+          </span>
+        </div>
+        <div class="brand-value">
+          <span class="value-mark" aria-hidden="true">03</span>
+          <span class="brand-value-text">
+            <strong>Feels like you</strong>
+            <small>Comfort comes first</small>
+          </span>
         </div>
       </section>
 
@@ -509,6 +651,8 @@
             <option value="outerwear">Outerwear</option>
             <option value="knitwear">Knitwear</option>
             <option value="tops">Tops</option>
+            <option value="bottoms">Bottoms</option>
+            <option value="dresses">Dresses</option>
           </select>
           <select id="sort-products" aria-label="Sort products">
             <option value="featured">Featured</option>
@@ -525,8 +669,8 @@
           >
             <div class="product-image">
               <img
-                src="https://images.unsplash.com/photo-1551028189-0d7d1c6a1d22?auto=format&fit=crop&w=900&q=80"
-                alt="Neutral everyday jacket"
+                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=80"
+                alt="Everyday layers in a neutral palette"
                 loading="lazy"
               />
             </div>
@@ -595,6 +739,84 @@
               <button class="add-button" type="button">Add to bag</button>
             </div>
           </article>
+          <article
+            class="product"
+            data-product-id="weekender-dress"
+            data-category="dresses"
+            data-price="116"
+          >
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=80"
+                alt="Relaxed modern day dress"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-info">
+              <span>The Weekender Dress</span><span>$116</span>
+            </div>
+            <div class="product-controls">
+              <select aria-label="Choose a size for The Weekender Dress">
+                <option value="S">S</option>
+                <option value="M" selected>M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+              <button class="add-button" type="button">Add to bag</button>
+            </div>
+          </article>
+          <article
+            class="product"
+            data-product-id="linen-trouser"
+            data-category="bottoms"
+            data-price="88"
+          >
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80"
+                alt="A relaxed everyday outfit"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-info">
+              <span>Linen Wide-Leg Trouser</span><span>$88</span>
+            </div>
+            <div class="product-controls">
+              <select aria-label="Choose a size for Linen Wide-Leg Trouser">
+                <option value="S">S</option>
+                <option value="M" selected>M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+              <button class="add-button" type="button">Add to bag</button>
+            </div>
+          </article>
+          <article
+            class="product"
+            data-product-id="ribbed-tank"
+            data-category="tops"
+            data-price="42"
+          >
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=900&q=80"
+                alt="Soft neutral wardrobe staples"
+                loading="lazy"
+              />
+            </div>
+            <div class="product-info">
+              <span>Ribbed Everyday Tank</span><span>$42</span>
+            </div>
+            <div class="product-controls">
+              <select aria-label="Choose a size for Ribbed Everyday Tank">
+                <option value="S">S</option>
+                <option value="M" selected>M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+              <button class="add-button" type="button">Add to bag</button>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -615,9 +837,15 @@
         aria-labelledby="cart-title"
       >
         <div class="cart-header">
-          <h2 id="cart-title">
-            Your bag <span id="cart-title-count">(0)</span>
-          </h2>
+          <div class="cart-brand">
+            <span class="brand-symbol" aria-hidden="true">F</span>
+            <div class="cart-brand-copy">
+              <span class="cart-brand-name">FORME</span>
+              <h2 id="cart-title">
+                Your bag <span id="cart-title-count">(0)</span>
+              </h2>
+            </div>
+          </div>
           <button
             class="text-button"
             id="close-cart"
@@ -689,8 +917,14 @@
     </div>
 
     <footer>
-      <span>© 2026 FORME CLOTHING</span>
+      <span class="footer-brand">
+        <span class="brand-symbol brand-symbol--small" aria-hidden="true"
+          >F</span
+        >
+        <span class="footer-brand-name">FORME</span>
+      </span>
       <span>Made for everyday.</span>
+      <span>© 2026</span>
     </footer>
     <script>
       const productCards = [...document.querySelectorAll(".product")];
