@@ -44,10 +44,25 @@
         padding: 0 6vw;
         border-bottom: 1px solid var(--line);
       }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
       .logo {
         font-size: 1.35rem;
         font-weight: 800;
         letter-spacing: 0.13em;
+      }
+      .site-version {
+        padding: 4px 7px;
+        border: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        white-space: nowrap;
       }
       .nav {
         display: flex;
@@ -63,22 +78,8 @@
         cursor: pointer;
         font-size: 0.82rem;
       }
-
-      .site-banner {
-        background: #171b19;
-        color: #f4f2ec;
-        padding: 22px 6vw 18px;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .site-banner h2 {
-        margin: 0;
-        font:
-          800 clamp(2rem, 4vw, 5rem)/0.9 "Trebuchet MS",
-          "Gill Sans",
-          sans-serif;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
+      .bag:hover {
+        color: var(--accent);
       }
 
       .hero {
@@ -161,6 +162,31 @@
         color: var(--muted);
         font-size: 0.9rem;
       }
+      .catalog-tools {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+      .catalog-tools input,
+      .catalog-tools select,
+      .product-controls select,
+      .checkout-form input {
+        min-height: 42px;
+        padding: 0 12px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        background: transparent;
+        color: var(--ink);
+        font: inherit;
+      }
+      .catalog-tools input {
+        flex: 1;
+        max-width: 420px;
+      }
+      .catalog-tools select {
+        min-width: 145px;
+      }
       .products {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -190,6 +216,152 @@
       }
       .product-info span:last-child {
         color: var(--muted);
+      }
+      .product-controls {
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .product-controls select {
+        min-width: 78px;
+      }
+      .add-button,
+      .checkout-button {
+        min-height: 42px;
+        padding: 0 16px;
+        border: 1px solid var(--ink);
+        background: var(--ink);
+        color: white;
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.82rem;
+      }
+      .add-button {
+        flex: 1;
+      }
+      .add-button:hover,
+      .checkout-button:hover {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+      .add-button:disabled,
+      .checkout-button:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+      .cart-overlay {
+        position: fixed;
+        z-index: 5;
+        inset: 0;
+        display: flex;
+        justify-content: flex-end;
+        background: #171b1970;
+      }
+      .cart-overlay[hidden] {
+        display: none;
+      }
+      .cart-panel {
+        width: min(100%, 460px);
+        height: 100%;
+        overflow-y: auto;
+        padding: 28px;
+        background: var(--paper);
+        box-shadow: -12px 0 36px #171b1920;
+      }
+      .cart-header,
+      .cart-line,
+      .cart-total,
+      .cart-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .cart-header {
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--line);
+      }
+      .cart-header h2 {
+        margin: 0;
+        font:
+          500 2rem Georgia,
+          serif;
+      }
+      .text-button {
+        border: 0;
+        padding: 6px;
+        background: transparent;
+        cursor: pointer;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .cart-items {
+        display: grid;
+        gap: 18px;
+        padding: 22px 0;
+      }
+      .cart-line {
+        align-items: flex-start;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+      .cart-line p {
+        margin: 5px 0;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+      .quantity-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .quantity-controls button {
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--line);
+        background: transparent;
+        cursor: pointer;
+      }
+      .cart-empty {
+        padding: 30px 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+      .cart-total {
+        padding: 18px 0 6px;
+        border-top: 1px solid var(--line);
+        font-weight: 700;
+      }
+      .shipping-note,
+      .demo-note {
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.5;
+      }
+      .cart-actions {
+        align-items: stretch;
+        flex-direction: column;
+        margin-top: 18px;
+      }
+      .checkout-button {
+        width: 100%;
+      }
+      .checkout-form {
+        display: grid;
+        gap: 12px;
+        padding-top: 18px;
+      }
+      .checkout-form[hidden] {
+        display: none;
+      }
+      .checkout-form label {
+        display: grid;
+        gap: 6px;
+        font-size: 0.82rem;
+      }
+      .order-message {
+        padding: 18px 0;
+        line-height: 1.5;
       }
 
       .note {
@@ -231,6 +403,17 @@
           gap: 14px;
           font-size: 0.74rem;
         }
+        .catalog-tools {
+          flex-wrap: wrap;
+        }
+        .catalog-tools input {
+          flex-basis: 100%;
+          max-width: none;
+        }
+        .catalog-tools select {
+          flex: 1;
+          min-width: 0;
+        }
         .hero {
           height: 68vh;
           min-height: 510px;
@@ -256,11 +439,17 @@
           grid-template-columns: 1fr 1fr;
           gap: 24px 12px;
         }
-        .product:last-child {
-          display: none;
-        }
         .product-info {
           font-size: 0.8rem;
+        }
+        .product-controls {
+          flex-wrap: wrap;
+        }
+        .product-controls select {
+          flex: 1;
+        }
+        .cart-panel {
+          padding: 22px;
         }
         .note {
           align-items: start;
@@ -276,7 +465,10 @@
   <body>
     <header>
       <div class="topbar">
-        <a class="logo" href="#home" aria-label="Forme home">FORME</a>
+        <div class="brand">
+          <a class="logo" href="#home" aria-label="Forme home">FORME</a>
+          <span class="site-version">Version 6</span>
+        </div>
         <nav class="nav" aria-label="Main navigation">
           <a href="#collection">Shop</a>
           <a href="#story">Our story</a>
@@ -284,10 +476,6 @@
         <button class="bag" type="button" aria-label="Shopping bag">
           Bag (<span id="bag-count">0</span>)
         </button>
-      </div>
-
-      <div class="site-banner">
-        <h2>Version 6</h2>
       </div>
     </header>
 
@@ -309,8 +497,32 @@
           <h2>New favorites</h2>
           <p>Made for all the days in between.</p>
         </div>
+        <div class="catalog-tools" aria-label="Product search and filters">
+          <input
+            id="product-search"
+            type="search"
+            placeholder="Search products"
+            aria-label="Search products"
+          />
+          <select id="category-filter" aria-label="Filter by category">
+            <option value="all">All categories</option>
+            <option value="outerwear">Outerwear</option>
+            <option value="knitwear">Knitwear</option>
+            <option value="tops">Tops</option>
+          </select>
+          <select id="sort-products" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+          </select>
+        </div>
         <div class="products">
-          <article class="product">
+          <article
+            class="product"
+            data-product-id="utility-jacket"
+            data-category="outerwear"
+            data-price="98"
+          >
             <div class="product-image">
               <img
                 src="https://images.unsplash.com/photo-1551028189-0d7d1c6a1d22?auto=format&fit=crop&w=900&q=80"
@@ -321,8 +533,22 @@
             <div class="product-info">
               <span>The Utility Jacket</span><span>$98</span>
             </div>
+            <div class="product-controls">
+              <select aria-label="Choose a size for The Utility Jacket">
+                <option value="S">S</option>
+                <option value="M" selected>M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+              <button class="add-button" type="button">Add to bag</button>
+            </div>
           </article>
-          <article class="product">
+          <article
+            class="product"
+            data-product-id="sunday-knit"
+            data-category="knitwear"
+            data-price="74"
+          >
             <div class="product-image">
               <img
                 src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=900&q=80"
@@ -333,8 +559,22 @@
             <div class="product-info">
               <span>Sunday Knit</span><span>$74</span>
             </div>
+            <div class="product-controls">
+              <select aria-label="Choose a size for Sunday Knit">
+                <option value="S">S</option>
+                <option value="M" selected>M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+              <button class="add-button" type="button">Add to bag</button>
+            </div>
           </article>
-          <article class="product">
+          <article
+            class="product"
+            data-product-id="everyday-shirt"
+            data-category="tops"
+            data-price="62"
+          >
             <div class="product-image">
               <img
                 src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=900&q=80"
@@ -344,6 +584,15 @@
             </div>
             <div class="product-info">
               <span>Everyday Shirt</span><span>$62</span>
+            </div>
+            <div class="product-controls">
+              <select aria-label="Choose a size for Everyday Shirt">
+                <option value="S">S</option>
+                <option value="M" selected>M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+              <button class="add-button" type="button">Add to bag</button>
             </div>
           </article>
         </div>
@@ -358,16 +607,343 @@
       </section>
     </main>
 
+    <div class="cart-overlay" id="cart-overlay" hidden>
+      <aside
+        class="cart-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cart-title"
+      >
+        <div class="cart-header">
+          <h2 id="cart-title">
+            Your bag <span id="cart-title-count">(0)</span>
+          </h2>
+          <button
+            class="text-button"
+            id="close-cart"
+            type="button"
+            aria-label="Close bag"
+          >
+            Close
+          </button>
+        </div>
+        <div id="cart-contents">
+          <div class="cart-items" id="cart-items"></div>
+          <p class="cart-empty" id="cart-empty" hidden>
+            Your bag is empty. Find something you love in the collection.
+          </p>
+          <div class="cart-total">
+            <span>Subtotal</span><span id="cart-subtotal">$0.00</span>
+          </div>
+          <p class="shipping-note">
+            Shipping and taxes are calculated at checkout.
+          </p>
+          <div class="cart-actions">
+            <button class="checkout-button" id="checkout-button" type="button">
+              Continue to checkout
+            </button>
+            <button class="text-button" id="continue-shopping" type="button">
+              Continue shopping
+            </button>
+          </div>
+        </div>
+        <form class="checkout-form" id="checkout-form" hidden>
+          <p class="demo-note">
+            Demo checkout only. No payment will be collected and no order will
+            be sent.
+          </p>
+          <label
+            >Full name<input name="name" autocomplete="name" required
+          /></label>
+          <label
+            >Email<input
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+          /></label>
+          <label
+            >Shipping address<input
+              name="address"
+              autocomplete="street-address"
+              required
+          /></label>
+          <label
+            >City<input name="city" autocomplete="address-level2" required
+          /></label>
+          <label
+            >Postal code<input
+              name="postal"
+              autocomplete="postal-code"
+              required
+          /></label>
+          <button class="checkout-button" type="submit">
+            Review demo order
+          </button>
+          <button class="text-button" id="return-to-bag" type="button">
+            Back to bag
+          </button>
+        </form>
+        <p class="order-message" id="order-message" role="status" hidden></p>
+      </aside>
+    </div>
+
     <footer>
-      <span>© 2026 FORME CLOTHING</span><span>Made for everyday.</span>
+      <span>© 2026 FORME CLOTHING</span>
+      <span>Made for everyday.</span>
     </footer>
     <script>
+      const productCards = [...document.querySelectorAll(".product")];
+      const products = Object.fromEntries(
+        productCards.map((card) => [
+          card.dataset.productId,
+          {
+            name: card.querySelector(".product-info span").textContent,
+            price: Number(card.dataset.price),
+            image: card.querySelector("img").src,
+            alt: card.querySelector("img").alt,
+          },
+        ]),
+      );
+      const bagButton = document.querySelector(".bag");
       const bagCount = document.querySelector("#bag-count");
-      document.querySelectorAll(".product").forEach((product) => {
-        product.addEventListener("click", () => {
-          bagCount.textContent = Number(bagCount.textContent) + 1;
+      const cartOverlay = document.querySelector("#cart-overlay");
+      const cartItems = document.querySelector("#cart-items");
+      const cartEmpty = document.querySelector("#cart-empty");
+      const cartSubtotal = document.querySelector("#cart-subtotal");
+      const cartContents = document.querySelector("#cart-contents");
+      const checkoutForm = document.querySelector("#checkout-form");
+      const orderMessage = document.querySelector("#order-message");
+      const money = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      });
+      let cart = [];
+
+      try {
+        const storedCart = JSON.parse(
+          localStorage.getItem("forme-cart") || "[]",
+        );
+        if (Array.isArray(storedCart)) {
+          cart = storedCart.filter(
+            (line) =>
+              products[line.id] &&
+              typeof line.size === "string" &&
+              Number.isInteger(line.quantity) &&
+              line.quantity > 0,
+          );
+        }
+      } catch {
+        cart = [];
+      }
+
+      function saveCart() {
+        try {
+          localStorage.setItem("forme-cart", JSON.stringify(cart));
+        } catch {
+          // The cart remains usable for this visit when storage is unavailable.
+        }
+      }
+
+      function renderCart() {
+        const count = cart.reduce((total, line) => total + line.quantity, 0);
+        const subtotal = cart.reduce(
+          (total, line) => total + products[line.id].price * line.quantity,
+          0,
+        );
+        bagCount.textContent = count;
+        document.querySelector("#cart-title-count").textContent = `(${count})`;
+        cartSubtotal.textContent = money.format(subtotal);
+        cartEmpty.hidden = cart.length > 0;
+        document.querySelector(".cart-total").hidden = cart.length === 0;
+        document.querySelector(".shipping-note").hidden = cart.length === 0;
+        document.querySelector(".cart-actions").hidden = cart.length === 0;
+        document.querySelector("#checkout-button").disabled = cart.length === 0;
+        cartItems.replaceChildren();
+
+        cart.forEach((line) => {
+          const product = products[line.id];
+          const row = document.createElement("div");
+          row.className = "cart-line";
+
+          const details = document.createElement("div");
+          const name = document.createElement("strong");
+          name.textContent = product.name;
+          const size = document.createElement("p");
+          size.textContent = `Size ${line.size} · ${money.format(product.price)}`;
+          const controls = document.createElement("div");
+          controls.className = "quantity-controls";
+          const decrease = document.createElement("button");
+          decrease.type = "button";
+          decrease.dataset.cartAction = "decrease";
+          decrease.dataset.cartId = line.id;
+          decrease.dataset.cartSize = line.size;
+          decrease.setAttribute(
+            "aria-label",
+            `Remove one ${product.name}, size ${line.size}`,
+          );
+          decrease.textContent = "−";
+          const quantity = document.createElement("span");
+          quantity.textContent = line.quantity;
+          const increase = document.createElement("button");
+          increase.type = "button";
+          increase.dataset.cartAction = "increase";
+          increase.dataset.cartId = line.id;
+          increase.dataset.cartSize = line.size;
+          increase.setAttribute(
+            "aria-label",
+            `Add one ${product.name}, size ${line.size}`,
+          );
+          increase.textContent = "+";
+          const remove = document.createElement("button");
+          remove.type = "button";
+          remove.className = "text-button";
+          remove.dataset.cartAction = "remove";
+          remove.dataset.cartId = line.id;
+          remove.dataset.cartSize = line.size;
+          remove.textContent = "Remove";
+          controls.append(decrease, quantity, increase);
+          details.append(name, size, controls);
+          row.append(details, remove);
+          cartItems.append(row);
+        });
+      }
+
+      function closeCart() {
+        cartOverlay.hidden = true;
+        document.body.style.overflow = "";
+        bagButton.focus();
+      }
+
+      function openCart() {
+        orderMessage.hidden = true;
+        checkoutForm.hidden = true;
+        cartContents.hidden = false;
+        cartOverlay.hidden = false;
+        document.body.style.overflow = "hidden";
+        document.querySelector("#close-cart").focus();
+      }
+
+      productCards.forEach((card) => {
+        card.querySelector(".add-button").addEventListener("click", () => {
+          const id = card.dataset.productId;
+          const size = card.querySelector(".product-controls select").value;
+          const existing = cart.find(
+            (line) => line.id === id && line.size === size,
+          );
+          if (existing) {
+            existing.quantity += 1;
+          } else {
+            cart.push({ id, size, quantity: 1 });
+          }
+          saveCart();
+          renderCart();
+          card.querySelector(".add-button").textContent = "Added to bag";
+          window.setTimeout(() => {
+            card.querySelector(".add-button").textContent = "Add to bag";
+          }, 1200);
         });
       });
+
+      document
+        .querySelector("#cart-items")
+        .addEventListener("click", (event) => {
+          const button = event.target.closest("button[data-cart-action]");
+          if (!button) return;
+          const lineIndex = cart.findIndex(
+            (line) =>
+              line.id === button.dataset.cartId &&
+              line.size === button.dataset.cartSize,
+          );
+          if (lineIndex < 0) return;
+          if (button.dataset.cartAction === "increase")
+            cart[lineIndex].quantity += 1;
+          if (button.dataset.cartAction === "decrease")
+            cart[lineIndex].quantity -= 1;
+          if (
+            button.dataset.cartAction === "remove" ||
+            cart[lineIndex].quantity < 1
+          ) {
+            cart.splice(lineIndex, 1);
+          }
+          saveCart();
+          renderCart();
+        });
+
+      bagButton.addEventListener("click", openCart);
+      document
+        .querySelector("#close-cart")
+        .addEventListener("click", closeCart);
+      document
+        .querySelector("#continue-shopping")
+        .addEventListener("click", closeCart);
+      cartOverlay.addEventListener("click", (event) => {
+        if (event.target === cartOverlay) closeCart();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !cartOverlay.hidden) closeCart();
+      });
+
+      document
+        .querySelector("#product-search")
+        .addEventListener("input", filterProducts);
+      document
+        .querySelector("#category-filter")
+        .addEventListener("change", filterProducts);
+      document
+        .querySelector("#sort-products")
+        .addEventListener("change", (event) => {
+          const sort = event.target.value;
+          const sorted = [...productCards];
+          if (sort === "price-low")
+            sorted.sort(
+              (a, b) => Number(a.dataset.price) - Number(b.dataset.price),
+            );
+          if (sort === "price-high")
+            sorted.sort(
+              (a, b) => Number(b.dataset.price) - Number(a.dataset.price),
+            );
+          const grid = document.querySelector(".products");
+          sorted.forEach((card) => grid.append(card));
+        });
+
+      function filterProducts() {
+        const query = document
+          .querySelector("#product-search")
+          .value.trim()
+          .toLowerCase();
+        const category = document.querySelector("#category-filter").value;
+        productCards.forEach((card) => {
+          const name = products[card.dataset.productId].name.toLowerCase();
+          card.hidden =
+            (query && !name.includes(query)) ||
+            (category !== "all" && card.dataset.category !== category);
+        });
+      }
+
+      document
+        .querySelector("#checkout-button")
+        .addEventListener("click", () => {
+          cartContents.hidden = true;
+          checkoutForm.hidden = false;
+          checkoutForm.querySelector("input").focus();
+        });
+      document.querySelector("#return-to-bag").addEventListener("click", () => {
+        checkoutForm.hidden = true;
+        cartContents.hidden = false;
+      });
+      checkoutForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const name = new FormData(checkoutForm).get("name");
+        cart = [];
+        saveCart();
+        renderCart();
+        checkoutForm.hidden = true;
+        orderMessage.textContent = `Thank you, ${name}. This demo checkout did not process a payment or send an order.`;
+        orderMessage.hidden = false;
+      });
+
+      renderCart();
     </script>
   </body>
 </html>
